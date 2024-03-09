@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS */
+    /* Responsive Card */
+    .custom-card {
+      margin-bottom: 20px;
+    }
+    /* Hamburger Menu */
+    .navbar-burger {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+      }
+      .navbar-burger {
+        display: block;
+      }
+      .navbar-burger:hover {
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>Logo</strong>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">
+          Home
+        </a>
+        <a class="navbar-item" href="#">
+          About
+        </a>
+        <a class="navbar-item" href="#">
+          Services
+        </a>
+        <a class="navbar-item" href="#">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+  <h1 class="title">Welcome to Our Website</h1>
+  <div class="columns is-multiline">
+    <!-- Responsive Card using Bulma -->
+    <div class="column is-half">
+      <div class="card custom-card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://via.placeholder.com/300" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Responsive Grid using Bootstrap -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Placeholder image">
+        <div class="card-body">
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards and grid items here -->
+  </div>
+</div>
+
+<script>
+  // JavaScript for handling hamburger menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
