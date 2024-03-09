@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Web App</title>
+  <style>
+    .btn {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn" onclick="changeColor()">Click Me to Change Color</button>
+  <br><br>
+  <input type="text" id="num1" placeholder="Enter first number">
+  <input type="text" id="num2" placeholder="Enter second number">
+  <button onclick="addNumbers()">Add</button>
+  <p id="result"></p>
+
+  <script>
+    // Button color change
+    function changeColor() {
+      var btn = document.querySelector('.btn');
+      btn.style.backgroundColor = 'red';
+   
+    }
+
+    // Greeting message based on current time
+    var currentTime = new Date();
+    var currentHour = currentTime.getHours();
+    var greetingMessage = "";
+    if (currentHour < 12) {
+      greetingMessage = "Good morning!";
+    } else if (currentHour < 18) {
+      greetingMessage = "Good afternoon!";
+    } else {
+      greetingMessage = "Good evening!";
+    }
+    alert(greetingMessage);
+
+    // Basic calculator
+    function addNumbers() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var result = num1 + num2;
+      document.getElementById('result').innerHTML = 'Result: ' + result;
+    }
+  </script>
+</body>
+</html>
